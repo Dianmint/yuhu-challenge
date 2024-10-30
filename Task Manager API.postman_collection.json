@@ -1,0 +1,631 @@
+{
+	"info": {
+		"_postman_id": "fb4c63b4-0a83-41bd-ac26-341f80391564",
+		"name": "Task Manager API",
+		"description": "Colección de endpoints para el sistema de gestión de tareas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30032096"
+	},
+	"item": [
+		{
+			"name": "Listar todas las tareas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Listar todas las tareas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 23:39:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1030"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"Prueba\",\n        \"email\": \"diana.aguilar@yuhu.mx\",\n        \"description\": \"asdasd\",\n        \"id\": \"6ef33e62-9e64-4079-b0a3-2003b14a17a1\",\n        \"completed_at\": null,\n        \"created_at\": \"2024-10-30T21:03:12.643590Z\",\n        \"updated_at\": \"2024-10-30T21:26:03.228837Z\"\n    },\n    {\n        \"title\": \"Prueba\",\n        \"email\": \"diana.aguilar@yuhu.mx\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque nunc ut efficitur sodales.\",\n        \"id\": \"a102df33-ab87-414e-ab48-a93f5563e71d\",\n        \"completed_at\": null,\n        \"created_at\": \"2024-10-30T22:49:14.779736Z\",\n        \"updated_at\": \"2024-10-30T22:53:25.105319Z\"\n    },\n    {\n        \"title\": \"Sample Task\",\n        \"email\": \"user@example.com\",\n        \"description\": \"This is a sample task.\",\n        \"id\": \"2faa342f-a21a-486b-af59-3fffac1a7aac\",\n        \"completed_at\": null,\n        \"created_at\": \"2024-10-30T23:34:54.083922Z\",\n        \"updated_at\": \"2024-10-30T23:34:54.083922Z\"\n    },\n    {\n        \"title\": \"dfsdf\",\n        \"email\": \"diana.aguilar@yuhu.mx\",\n        \"description\": \"dfsdf\",\n        \"id\": \"ed649f3d-e9fe-4899-8df5-539f2d98bb5f\",\n        \"completed_at\": \"2024-10-30T02:43:05.873402Z\",\n        \"created_at\": \"2024-10-30T02:42:46.611739Z\",\n        \"updated_at\": \"2024-10-30T02:43:05.882396Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Crear una nueva tarea",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Sample Task\",\n  \"email\": \"user@example.com\",\n  \"description\": \"This is a sample task.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/tasks/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una nueva tarea",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Sample Task\",\n  \"email\": \"user@example.com\",\n  \"description\": \"This is a sample task.\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tasks/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 23:39:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Sample Task\",\n    \"email\": \"user@example.com\",\n    \"description\": \"This is a sample task.\",\n    \"id\": \"506a5ff5-4044-4e7a-b29d-63e96e872df7\",\n    \"completed_at\": null,\n    \"created_at\": \"2024-10-30T23:39:32.890019Z\",\n    \"updated_at\": \"2024-10-30T23:39:32.890019Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Detalles de una tarea específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "506a5ff5-4044-4e7a-b29d-63e96e872df7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Detalles de una tarea específica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/tasks/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "506a5ff5-4044-4e7a-b29d-63e96e872df7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 23:39:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Sample Task\",\n    \"email\": \"user@example.com\",\n    \"description\": \"This is a sample task.\",\n    \"id\": \"506a5ff5-4044-4e7a-b29d-63e96e872df7\",\n    \"completed_at\": null,\n    \"created_at\": \"2024-10-30T23:39:32.890019Z\",\n    \"updated_at\": \"2024-10-30T23:39:32.890019Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar una tarea",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Task Title\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/tasks/:id/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "506a5ff5-4044-4e7a-b29d-63e96e872df7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una tarea",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Task Title\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tasks/:id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "506a5ff5-4044-4e7a-b29d-63e96e872df7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 23:42:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "246"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Updated Task Title\",\n    \"email\": \"user@example.com\",\n    \"description\": \"This is a sample task.\",\n    \"id\": \"506a5ff5-4044-4e7a-b29d-63e96e872df7\",\n    \"completed_at\": null,\n    \"created_at\": \"2024-10-30T23:39:32.890019Z\",\n    \"updated_at\": \"2024-10-30T23:42:52.700753Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar una tarea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks/:id/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2faa342f-a21a-486b-af59-3fffac1a7aac"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una tarea",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/tasks/:id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2faa342f-a21a-486b-af59-3fffac1a7aac"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 23:43:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.9"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Marcar una tarea como completada",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"done\": true\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/tasks/:id/complete/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id",
+						"complete",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "506a5ff5-4044-4e7a-b29d-63e96e872df7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Marcar una tarea como completada",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"done\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tasks/:id/complete/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":id",
+								"complete",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "506a5ff5-4044-4e7a-b29d-63e96e872df7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 23:44:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "283"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Updated Task Title\",\n    \"email\": \"user@example.com\",\n    \"description\": \"This is a sample task.\",\n    \"id\": \"506a5ff5-4044-4e7a-b29d-63e96e872df7\",\n    \"completed_at\": \"2024-10-30T23:44:27.763622Z\",\n    \"created_at\": \"2024-10-30T23:39:32.890019Z\",\n    \"updated_at\": \"2024-10-30T23:44:27.764617Z\",\n    \"done\": true\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
