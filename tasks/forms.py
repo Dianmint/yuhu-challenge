@@ -6,5 +6,8 @@ class TaskForm(forms.ModelForm):
         model = Task
         fields = ['title', 'email', 'description', 'expirate_at']
         widgets = {
-            'expirate_at': forms.DateInput(attrs={'type': 'date'}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'expirate_at': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }
