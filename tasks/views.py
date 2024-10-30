@@ -1,6 +1,8 @@
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils import timezone
+
 from .models import Task
 from .forms import TaskForm
 
@@ -46,8 +48,8 @@ class MarkTaskAsDoneView(UpdateView):
     success_url = reverse_lazy('task_list')
 
     def form_valid(self, form):
-        task = form.save(commit=False)
+        task = form.instance
         task.done = True
         task.completed_at = timezone.now()
         task.save()
-        return super().form_valid(form)
+        return redirect(self.success_url)
