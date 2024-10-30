@@ -1,0 +1,13 @@
+{% for task in tasks %}
+    <li>
+        {{ task.title }} - {{ task.description }}
+        {% if not task.done %}
+            <form action="{% url 'mark_task_as_done' task.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Mark as Completed</button>
+            </form>
+        {% else %}
+            <span>Completed on {{ task.completed_at }}</span>
+        {% endif %}
+    </li>
+{% endfor %}

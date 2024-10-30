@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center;">Task List</h2>
+<div class="task-container">
+    <div class="task-box">
+        <h3>To do</h3>
+        <ul>
+            {% for task in active_tasks %}
+              <li>
+                <form action="{% url 'mark_task_as_done' task.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="checkbox" 
+                           onchange="this.form.submit();" 
+                           {% if task.done %} checked {% endif %}>
+                </form>
+                <span>{{ task.title }} - {{ task.emai }}</span>
+                <div class="task-actions">
+                    <a href="{% url 'update_task' task.id %}">✏️</a>
+                    <a href="{% url 'delete_task' task.id %}" style="color: red;">🗑️</a>
+                </div>
+              </li>
+            {% empty %}
+              <li class="empty-message">To Do List Empty</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="task-box">
+        <h3>Done</h3>
+        <ul>
+            {% for task in completed_tasks %}
+              <li>
+                <form action="{% url 'mark_task_as_done' task.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="checkbox" onchange="this.form.submit();" 
+                      {% if task.done %} checked {% endif %}>
+                </form>
+                <span>{{ task.title }} - {{ task.email }}</span>
+                <div class="task-actions">
+                    <a href="{% url 'update_task' task.id %}">✏️</a>
+                    <a href="{% url 'delete_task' task.id %}" style="color: red;">🗑️</a>
+                </div>
+              </li>
+            {% empty %}
+              <li class="empty-message">Done List Empty</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+
+

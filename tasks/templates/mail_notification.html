@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333333;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #4CAF50;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">{{ subject }}</div>
+    <div class="content">
+      <p>{{ message }}</p>
+      <ul>
+        <li><strong>Title:</strong> {{ task.title }}</li>
+        <li><strong>Description:</strong> {{ task.description }}</li>
+        <li><strong>Created At:</strong> {{ task.created_at }}</li>
+        <li><strong>Completed At:</strong> {% if task.completed_at %}{{ task.completed_at }}{% else %}N/A{% endif %}</li>
+      </ul>
+    </div>
+    <div class="footer">
+      Best regards,<br>
+      Task Management Team
+    </div>
+  </div>
+</body>
+</html>

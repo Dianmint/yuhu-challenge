@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+  <h2>Edit Task</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if task.done %}
+      <p>Completed on: {{ task.completed_at }}</p>
+    {% endif %}
+    <button type="submit">Save changes</button>
+    <button class="cancel-button" onclick="window.location.href='{% url 'task_list' %}'">Cancel</button>
+  </form>
+{% endblock %}
