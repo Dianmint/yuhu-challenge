@@ -16,7 +16,7 @@
                            onchange="this.form.submit();" 
                            {% if task.done %} checked {% endif %}>
                 </form>
-                <span>{{ task.title }} - {{ task.emai }}</span>
+                <span>{{ task.title }} - {{ task.email }}</span>
                 <div class="task-actions">
                     <a href="{% url 'update_task' task.id %}">✏️</a>
                     <a href="{% url 'delete_task' task.id %}" style="color: red;">🗑️</a>
