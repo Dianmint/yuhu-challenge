@@ -4,10 +4,12 @@
 
 {% block content %}
   <h2>Are you sure you want to delete this task?</h2>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, delete</button>
+  <div class="button-group">
+    <form method="post" style="display:inline;">
+      {% csrf_token %}
+      <button type="submit">Yes, delete</button>
+    </form>
     <button class="cancel-button" onclick="window.location.href='{% url 'task_list' %}'">Cancel</button>
-  </form>
+  </div>
 {% endblock %}
 

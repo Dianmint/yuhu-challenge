@@ -10,7 +10,9 @@
     {% if task.done %}
       <p>Completed on: {{ task.completed_at }}</p>
     {% endif %}
-    <button type="submit">Save changes</button>
-    <button class="cancel-button" onclick="window.location.href='{% url 'task_list' %}'">Cancel</button>
+    <div class="button-group">
+      <button type="submit">Save changes</button>
+      <button type="button" class="cancel-button" onclick="window.location.href='{% url 'task_list' %}'">Cancel</button>
+    </div>
   </form>
 {% endblock %}
